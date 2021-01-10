@@ -1,4 +1,4 @@
-package com.devsuperior.dsdeliver.config.entities;
+package com.devsuperior.dsdeliver.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,18 +8,20 @@ import java.util.Objects;
 @Table(name = "tb_product")
 public class Product implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String nome;
+    private String name;
     private double price;
     private String description;
     private String imageUri;
 
-    public Product(long id, String nome, double price, String description, String imageUri) {
+    public Product(long id, String name, double price, String description, String imageUri) {
         super();
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.price = price;
         this.description = description;
         this.imageUri = imageUri;
@@ -33,12 +35,12 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPrice() {
